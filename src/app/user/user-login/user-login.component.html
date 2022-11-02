@@ -1,10 +1,17 @@
-<div id="component">
-    <table class="table table-sm">
+<div id="login">
+    <table class="table table-sm" id="logtable">
         <tr>
             <th>Username</th>
             <td><input [(ngModel)]="username"></td>
         </tr>
+        <tr>
+            <th>Password</th>
+            <td><input [(ngModel)]="password" type="password"></td>
+        </tr>
     </table>
+    <div>
+        <span><button (click)="userLogin()" class="btn btn-dark" id="btnlogin">Login</button></span>
+        <span id="logmsg">{{ message }}</span>
+    </div>
 </div>
 
-<p>user-login works!</p>

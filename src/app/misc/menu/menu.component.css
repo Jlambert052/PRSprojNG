@@ -1,0 +1,23 @@
+li {
+    display:inline-block
+}
+
+nav {
+    background-color: black;
+}
+
+a {
+    color:azure;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+a:hover {
+    color:black;
+    background-color: darkcyan;
+    
+}
+
+ul {
+    padding-left: 10px;
+}
