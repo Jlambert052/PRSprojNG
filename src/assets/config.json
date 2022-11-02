@@ -1,0 +1,4 @@
+{
+    "baseurl": "http://localhost:5432/api",
+    "xbaseurl": "http://jwlamber.w36.wh-2.com/PRSdb/api"
+}
