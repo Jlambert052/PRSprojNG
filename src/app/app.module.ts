@@ -14,6 +14,9 @@ import { UserCreateComponent } from './user/user-create/user-create.component';
 import { UserChangeComponent } from './user/user-change/user-change.component';
 import { UserLoginComponent } from './user/user-login/user-login.component';
 import { AppInitService } from './app-init.service';
+import { BoolDisplayPipe } from './common/bool-display.pipe';
+import { SearchPipe } from './user/search.pipe';
+import { SortPipe } from './common/sort.pipe';
 
 export function startupServiceFactory(AppInit: AppInitService): Function {
   return () => AppInit.getSettings();
@@ -29,7 +32,10 @@ export function startupServiceFactory(AppInit: AppInitService): Function {
     UserListComponent,
     UserCreateComponent,
     UserChangeComponent,
-    UserLoginComponent
+    UserLoginComponent,
+    BoolDisplayPipe,
+    SearchPipe,
+    SortPipe
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

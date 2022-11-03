@@ -13,7 +13,7 @@ export class UserDetailComponent implements OnInit {
 
   pageTitle: string = "User Detail";
   isDetail: boolean = true; //use for not allowing changes if detail vs change
-  isUser: boolean = false; //investigating on how to have password changing only show for user that is logged in.
+  isUser: boolean = false; // Unsure if able to use this to hide PW for non logged account.
   user!: User;
 
   constructor(

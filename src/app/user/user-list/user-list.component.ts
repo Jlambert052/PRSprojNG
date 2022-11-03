@@ -12,6 +12,9 @@ export class UserListComponent implements OnInit {
 
   pageTitle: string = "User List";
   users: User[] = [];
+  searchCriteria: string = "";
+  sortColumn: string = "id";
+  sortAsc: boolean = true;
   //add sorting func later
 
   constructor(
@@ -19,10 +22,19 @@ export class UserListComponent implements OnInit {
     private usersvc: UserService
   ) { }
 
+  sortBy(column: string): void {
+    console.debug(`sortBy(${column})`);
+    if(column === this.sortColumn) {
+      this.sortAsc = !this.sortAsc;
+      return;
+    }
+    this.sortColumn = column;
+    this.sortAsc = true;
+  }
   
 
   ngOnInit(): void {
-    // uncomment this after you dont need to check list 24/7 this.sys.checkLogin();
+    // this.sys.checkLogin();
     this.usersvc.list().subscribe({
       next: (res) => {
         console.debug("Users:", res);

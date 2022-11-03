@@ -9,23 +9,23 @@
         </tr>
         <tr>
             <th>Username</th>
-            <td><input [(ngModel)]="user.username" type="string"></td>
+            <td><input [(ngModel)]="user.username" type="string" [disabled]="isDetail"></td>
         </tr>
         <tr>
             <th>First name</th>
-            <td><input [(ngModel)]="user.firstname" type="string"></td>
+            <td><input [(ngModel)]="user.firstname" type="string" [disabled]="isDetail"></td>
         </tr>
         <tr>
             <th>Last name</th>
-            <td><input [(ngModel)]="user.lastname" type="string"></td>
+            <td><input [(ngModel)]="user.lastname" type="string" [disabled]="isDetail"></td>
         </tr>
         <tr>
             <th>Phone</th>
-            <td><input [(ngModel)]="user.phone" type="string"></td>
+            <td><input [(ngModel)]="user.phone" type="string" [disabled]="isDetail"></td>
         </tr>
         <tr>
             <th>Email</th>
-            <td><input [(ngModel)]="user.email" type="string"></td>
+            <td><input [(ngModel)]="user.email" type="string" [disabled]="isDetail"></td>
         </tr>
         <tr>
             <th>Reviewer</th>
