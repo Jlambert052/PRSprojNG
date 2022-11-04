@@ -25,6 +25,7 @@ import { VendorListComponent } from './vendor/vendor-list/vendor-list.component'
 import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
 import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
 import { VendorChangeComponent } from './vendor/vendor-change/vendor-change.component';
+import { VendPipe } from './product/vend.pipe';
 
 export function startupServiceFactory(AppInit: AppInitService): Function {
   return () => AppInit.getSettings();
@@ -44,6 +45,7 @@ export function startupServiceFactory(AppInit: AppInitService): Function {
     BoolDisplayPipe,
     SearchPipe,
     SortPipe,
+    ProductListComponent,
     ProductDetailComponent,
     ProductChangeComponent,
     ProductCreateComponent,
@@ -51,6 +53,7 @@ export function startupServiceFactory(AppInit: AppInitService): Function {
     VendorDetailComponent,
     VendorCreateComponent,
     VendorChangeComponent,
+    VendPipe,
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

@@ -1,1 +1,28 @@
-<p>product-list works!</p>
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Part Number</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Unit Count</th>
+                <th>Vendor</th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let p of products">
+            <td>{{p.id}}</td>
+            <td>{{p.partNbr}}</td>
+            <td>{{p.name}}</td>
+            <td>{{p.price}}</td>
+            <td>{{p.unit}}</td>
+            <td>{{p.vendor.name}}</td>
+            <td>
+                <a routerLink="/products/detail/{{p.id}}">Detail</a> |
+                <a routerLink="/products/change/{{p.id}}">Change</a>
+            </td>
+        </tbody>
+    </table>
+</div>

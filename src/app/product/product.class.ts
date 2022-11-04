@@ -1,3 +1,5 @@
+import { Vendor } from "../vendor/vendor.class";
+
 export class Product {
 
     id: number = 0;
@@ -6,5 +8,6 @@ export class Product {
     price: number = 0;
     unit: string = "";
     photopath: string = "";
-    //vendor: Vendor = "";
+    vendor: Vendor = new Vendor;
+    vendorId: number = 0;
 }
