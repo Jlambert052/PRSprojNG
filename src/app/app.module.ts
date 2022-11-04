@@ -17,6 +17,14 @@ import { AppInitService } from './app-init.service';
 import { BoolDisplayPipe } from './common/bool-display.pipe';
 import { SearchPipe } from './user/search.pipe';
 import { SortPipe } from './common/sort.pipe';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailComponent } from './product/product-detail/product-detail.component';
+import { ProductChangeComponent } from './product/product-change/product-change.component';
+import { ProductCreateComponent } from './product/product-create/product-create.component';
+import { VendorListComponent } from './vendor/vendor-list/vendor-list.component';
+import { VendorDetailComponent } from './vendor/vendor-detail/vendor-detail.component';
+import { VendorCreateComponent } from './vendor/vendor-create/vendor-create.component';
+import { VendorChangeComponent } from './vendor/vendor-change/vendor-change.component';
 
 export function startupServiceFactory(AppInit: AppInitService): Function {
   return () => AppInit.getSettings();
@@ -35,7 +43,14 @@ export function startupServiceFactory(AppInit: AppInitService): Function {
     UserLoginComponent,
     BoolDisplayPipe,
     SearchPipe,
-    SortPipe
+    SortPipe,
+    ProductDetailComponent,
+    ProductChangeComponent,
+    ProductCreateComponent,
+    VendorListComponent,
+    VendorDetailComponent,
+    VendorCreateComponent,
+    VendorChangeComponent,
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,

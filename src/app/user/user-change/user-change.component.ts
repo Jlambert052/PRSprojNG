@@ -27,7 +27,7 @@ export class UserChangeComponent implements OnInit {
     this.usersvc.change(this.user).subscribe({
       next: (res) => {
         console.debug("User Changed Successfully");
-        this.router.navigateByUrl("/user/list");
+        this.router.navigateByUrl("/users/list");
       },
       error: (err) => {
         console.error(err);

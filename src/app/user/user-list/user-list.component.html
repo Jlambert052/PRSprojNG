@@ -1,8 +1,8 @@
 <app-menu></app-menu>
 <h5>{{pageTitle}}</h5>
 <div>
-    <a routerLink="/user/create">Create New User</a> |
-    <input id="search" [(ngModel)]="searchCriteria" placeholder="Search name or email" class="noborder">
+    <a routerLink="/users/create">Create New User</a> |
+    <input id="search" [(ngModel)]="searchCriteria" placeholder="Name or email" class="noborder" maxlength="40">
     <table class="table table-striped table-sm">
         <thead>
             <tr>
@@ -26,7 +26,7 @@
                 <td>{{u.isReviewer | bool}}</td>
                 <td>{{u.isAdmin | bool}}</td>
                 <td> 
-                    <a routerLink="/user/detail/{{u.id}}">Detail</a> | <a routerLink="/user/change/{{u.id}}">Change</a> 
+                    <a routerLink="/users/detail/{{u.id}}">Detail</a> | <a routerLink="/users/change/{{u.id}}">Change</a> 
                 </td>
             </tr>
         </tbody>

@@ -1,0 +1,39 @@
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <a routerLink="/vendors/create">Create New Vendor</a> |
+    <input id="search" [(ngModel)]="searchCriteria" placeholder="Code, Name, Email" class="noborder" maxlength="40">
+    <table class="table table-striped table-sm">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Change</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let v of vendors">
+                <td>{{v.id}}</td>
+                <td>{{v.code}}</td>
+                <td>{{v.name}}</td>
+                <td>{{v.address}}</td>
+                <td>{{v.city}}</td>
+                <td>{{v.state}}</td>
+                <td>{{v.zip}}</td>
+                <td>{{v.phone}}</td>
+                <td>{{v.email}}</td>
+                <td>
+                    <a routerLink="/vendors/detail/{{v.id}}">Detail</a> |
+                    <a routerLink="/vendors/change/{{v.id}}">Change</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

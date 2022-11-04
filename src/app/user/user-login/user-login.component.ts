@@ -26,7 +26,7 @@ userLogin(): void {
     next: (res) => {
       console.debug("Login Success:", res);
       this.sys.user = res;
-      this.router.navigateByUrl("/user/list");
+      this.router.navigateByUrl("/users/list");
     },
     error: (err) => {
       if(err.status === 404) {

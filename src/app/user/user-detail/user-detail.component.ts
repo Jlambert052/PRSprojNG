@@ -24,7 +24,7 @@ export class UserDetailComponent implements OnInit {
 
     showVerifyButton: boolean = false;
 
-    remove(): void {
+  confirm(): void {
       this.showVerifyButton = !this.showVerifyButton;
     }
 
@@ -32,7 +32,7 @@ export class UserDetailComponent implements OnInit {
       this.usersvc.remove(this.user.id).subscribe({
         next: (res) => {
           console.debug("User Deleted");
-          this.router.navigateByUrl("/user/list");
+          this.router.navigateByUrl("/users/list");
         },
         error: (err) => {
           console.error(err);
