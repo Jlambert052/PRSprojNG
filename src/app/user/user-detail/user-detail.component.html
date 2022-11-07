@@ -41,8 +41,8 @@
         <span>
             <button (click)="confirm()" class="btn btn-warning">Remove User</button>
         </span>
-        <span *ngIf="showVerifyButton">
-            <button (click)="verifyDelete()" class="btn btn-danger">Confirm Delete?</button>
+        <span>
+            <button (click)="verifyDelete()" class="btn btn-danger"[hidden]="showVerifyButton">Confirm Delete?</button>
         </span>
     </div>
 </div>

@@ -2,7 +2,7 @@
 <h5>Create Vendor</h5>
 <div>
     <table class="table table-sm">
-        <tbody>
+        <tbody *ngIf="vendor">
             <tr>
                 <th>ID</th>
                 <td><input [(ngModel)]="vendor.id" type="number" disabled></td>

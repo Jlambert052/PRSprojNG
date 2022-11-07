@@ -57,7 +57,7 @@ export function startupServiceFactory(AppInit: AppInitService): Function {
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
-    AppRoutingModule, 
+    AppRoutingModule,
   ],
   providers: [
     AppInitService, {

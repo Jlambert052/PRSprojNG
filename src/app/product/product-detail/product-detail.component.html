@@ -1,1 +1,41 @@
-<p>product-detail works!</p>
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <table class="table table-sm" *ngIf="product">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td><input [(ngModel)]="product.id" type="number" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Part Number</th>
+                <td><input [(ngModel)]="product.partNbr" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td><input [(ngModel)]="product.name" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td><input [(ngModel)]="product.price" type="number" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Unit Count</th>
+                <td><input [(ngModel)]="product.unit" type="number" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Vendor</th>
+                <td>
+                    <select [(ngModel)]="product.vendor.name" disabled>
+                        <option>{{product.vendor.name}}</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <span>
+        <button (click)="remove()" class="btn btn-warning">Remove Product</button> 
+        <span [hidden]="showRemove"> | </span>
+        <button (click)="verifyDelete()" class="btn btn-danger" [hidden]="showRemove"> Confirm Delete</button>
+    </span>
+</div>

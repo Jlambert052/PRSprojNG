@@ -26,6 +26,7 @@ export class ProductListComponent implements OnInit {
     private vendsvc: VendorService
   ) { }
 
+
   ngOnInit(): void {  
     this.prodsvc.list().subscribe({
       next: (res) => {

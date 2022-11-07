@@ -1,1 +1,37 @@
-<p>product-create works!</p>
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <table class="table table-sm">
+        <tbody *ngIf="vendors">
+            <tr>
+                <th>ID</th>
+                <td><input [(ngModel)]="product.id" type="number" disabled [defaultValue]="0"></td>
+            </tr>
+            <tr>
+                <th>Part Number</th>
+                <td><input [(ngModel)]="product.partNbr" type="text"></td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td><input [(ngModel)]="product.name" type="text"></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td><input [(ngModel)]="product.price" type="number"></td>
+            </tr>
+            <tr>
+                <th>Unit Count</th>
+                <td><input [(ngModel)]="product.unit" type="text"></td>
+            </tr>
+            <tr>
+                <th>Vendor</th>
+                <td><select [(ngModel)]="product.vendorId">
+                    <option *ngFor="let v of vendors" value="{{v.id}}">{{v.name}}</option>
+                </select></td>
+            </tr>
+        </tbody>
+    </table>
+    <span>
+        <button (click)="save()" class="btn btn-success">Create Product</button>
+    </span>
+</div>

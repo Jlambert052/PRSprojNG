@@ -1,7 +1,11 @@
 <app-menu></app-menu>
 <h5>{{pageTitle}}</h5>
 <div>
-    <table class="table table-sm table-striped">
+    <span>
+        <a routerLink="/products/create">Create New Product</a> |
+        <input id="search" [(ngModel)]="searchCriteria" placeholder="Part Number or Name" maxlength="35" class="noborder">
+    </span>
+    <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th>ID</th>
@@ -12,17 +16,20 @@
                 <th>Vendor</th>
             </tr>
         </thead>
-        <tbody *ngFor="let p of products">
-            <td>{{p.id}}</td>
-            <td>{{p.partNbr}}</td>
-            <td>{{p.name}}</td>
-            <td>{{p.price}}</td>
-            <td>{{p.unit}}</td>
-            <td>{{p.vendor.name}}</td>
-            <td>
-                <a routerLink="/products/detail/{{p.id}}">Detail</a> |
-                <a routerLink="/products/change/{{p.id}}">Change</a>
-            </td>
+        <tbody>
+            <tr *ngFor="let p of products">
+
+                <td>{{p.id}}</td>
+                <td>{{p.partNbr}}</td>
+                <td>{{p.name}}</td>
+                <td>{{p.price}}</td>
+                <td>{{p.unit}}</td>
+                <td>{{p.vendor.name}}</td>
+                <td>
+                    <a routerLink="/products/detail/{{p.id}}">Detail</a> |
+                    <a routerLink="/products/change/{{p.id}}">Change</a>
+                </td>
+            </tr>
         </tbody>
     </table>
 </div>

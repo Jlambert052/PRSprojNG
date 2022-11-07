@@ -22,7 +22,7 @@ export class UserDetailComponent implements OnInit {
     private usersvc: UserService
   ) { }
 
-    showVerifyButton: boolean = false;
+    showVerifyButton: boolean = true;
 
   confirm(): void {
       this.showVerifyButton = !this.showVerifyButton;
