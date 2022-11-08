@@ -22,6 +22,11 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { ProductChangeComponent } from './product/product-change/product-change.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestChangeComponent } from './request/request-change/request-change.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+
 
 
 const routes: Routes = [
@@ -42,6 +47,11 @@ const routes: Routes = [
   {path: "products/detail/:id", component: ProductDetailComponent},
   {path: "products/change/:id", component:ProductChangeComponent},
   {path: "products/create", component: ProductCreateComponent},
+
+  {path: "requests/list", component: RequestListComponent},
+  {path: "requests/detail/:id", component: RequestDetailComponent},
+  {path: "requests/change/:id", component: RequestChangeComponent},
+  {path: "requests/create", component: RequestCreateComponent},
 
   {path: "home", component: HomeComponent},
   {path: "about", component: AboutComponent},

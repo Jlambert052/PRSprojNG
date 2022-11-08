@@ -24,7 +24,7 @@ export class ProductCreateComponent implements OnInit {
   ) { }
 
   save(): void {
-    let vend = this.vendsvc.get(this.product.vendorId);
+    //let vend = this.vendsvc.get(this.product.vendorId);
     this.prodsvc.create(this.product).subscribe({
       next: (res) => {
         console.debug("Created.", res);

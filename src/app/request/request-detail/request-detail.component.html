@@ -1,0 +1,42 @@
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <table class="table table-sm" *ngIf="request">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td><input [(ngModel)]="request.id" type="number" disabled></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><input [(ngModel)]="request.description" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Justification</th>
+                <td><input [(ngModel)]="request.justification" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Rejection Reason</th>
+                <td><input [(ngModel)]="request.rejectionReason" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Delivery Mode</th>
+                <td><input [(ngModel)]="request.deliveryMode" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td><input [(ngModel)]="request.status" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td><input [(ngModel)]="request.total" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td><input [(ngModel)]="request.user.username" type="text" [disabled]="isDetail"></td>
+            </tr>
+        </tbody>
+    </table>
+    <button (click)="remove()" class="btn btn-warning">Delete Request</button> |
+    <button (click)="verifyDelete()" class="btn btn-danger" [hidden]="confirmDelete">Confirm Delete</button>
+</div>
