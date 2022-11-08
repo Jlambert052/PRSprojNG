@@ -28,11 +28,11 @@ export class RequestService {
     return this.http.post(`${this.baseurl}`, request) as Observable<Request>;
   }
 
-  change(request: Request): Observable<Request> {
-    return this.http.put(`${this.baseurl}/${request.id}`, request) as Observable<Request>;
+  change(request: Request): Observable<any> {
+    return this.http.put(`${this.baseurl}/${request.id}`, request) as Observable<any>;
   }
 
-  remove(id: number): Observable<Request> {
-    return this.http.delete(`${this.baseurl}/${id}`) as Observable<Request>;
+  remove(id: number): Observable<any> {
+    return this.http.delete(`${this.baseurl}/${id}`) as Observable<any>;
   }
 }

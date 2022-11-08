@@ -1,8 +1,15 @@
 <div>
     <nav>
         <ul>
-            <li *ngFor="let m of menus">
-                <a routerLink="{{m.route}}">{{m.display}}</a>
+            <li>
+                <a routerLink="/home">Home</a>
+                <a routerLink="/users/list" >Users</a>
+                <a routerLink="/vendors/list" >Vendors</a>
+                <a routerLink="/products/list" >Products</a>
+                <a routerLink="/requests/list" >Requests</a>
+                <a routerLink="/requests/reviews">Reviews</a>
+                <a routerLink="/about" >About</a>
+                <a routerLink="/users/login" >Logout</a>
             </li>
         </ul>
     </nav>

@@ -1,0 +1,59 @@
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <table class="table table-sm" *ngIf="request">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Rejection Reason</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>Username</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{request.id}}</td>
+                <td>{{request.description}}</td>
+                <td>{{request.rejectionReason}}</td>
+                <td>{{request.status}}</td>
+                <td>{{request.total}}</td>
+                <td>{{request.user.username}}</td>
+                <td><button (click)="reviewCheck()">Submit for Review</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <span>
+        <a routerLink="/requestlines/create">Create New Request Line</a>
+    </span>
+    <table class="table table-sm table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>LineTotal</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="request && request.requestLines">
+            <tr *ngFor="let r of request.requestLines">
+                <td>{{r.id}}</td>
+                <td>{{r.product.name}}</td>
+                <td>{{r.product.price | currency}}</td>
+                <td>{{r.quantity}}</td>
+                <td>{{r.quantity * r.product.price | currency}}</td>
+                <td>
+                    <a routerLink="/requestlines/change">Edit</a> |
+                    <a routerLink="/requestlines/remove">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

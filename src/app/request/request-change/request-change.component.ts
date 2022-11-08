@@ -47,15 +47,6 @@ export class RequestChangeComponent implements OnInit {
         console.error(err);
       }
     });
-    this.usersvc.list().subscribe({
-      next: (res) => {
-        console.debug("Users:", res);
-        this.users = res;
-      },
-      error: (err) => {
-        console.error(err);
-      }
-    });
   }
 
 }

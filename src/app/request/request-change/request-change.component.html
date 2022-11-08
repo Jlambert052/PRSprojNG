@@ -32,10 +32,8 @@
                 <td><input [(ngModel)]="request.total" type="text" disabled></td>
             </tr>
             <tr>
-                <th>User</th>
-                <td><select [(ngModel)]="request.userId">
-                    <option *ngFor="let u of users" value="{{u.id}}" disabled>{{u.username}}</option>
-                </select></td>
+                    <th>User</th>
+                    <td><input [(ngModel)]="request.user.username" value="{{request.userId}}" type="text" disabled></td>
             </tr>
         </tbody>
         <button (click)="save()" class="btn btn-success">Save Changes</button>
