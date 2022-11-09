@@ -25,20 +25,24 @@ export class RequestlineListComponent implements OnInit {
 
   reviewCheck(): void {
     console.log(this.request);  
+    this.request.rejectionReason = "";
     this.reqsvc.review(this.request).subscribe({
       next: (res) => {
         console.debug("Status Reviewed");
+        this.Init();
       },
       error: (err) => {
         console.error(err);
       }
-    })
+    });
+    
   }
 
   verifyDelete(id: number): void {
     this.reqlinesvc.remove(id).subscribe({
       next: (res) => {
         console.debug("Line deleted.");
+        this.Init();
       },
       error: (err) => {
         console.error(err);
@@ -46,7 +50,7 @@ export class RequestlineListComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
+  Init(): void {
     let id = this.route.snapshot.params["id"];
     this.reqsvc.get(id).subscribe({
       next: (res) => {
@@ -57,7 +61,10 @@ export class RequestlineListComponent implements OnInit {
         console.error(err);
       }
     });
+  }
 
+  ngOnInit(): void {
+    this.Init();
   }
 
 }

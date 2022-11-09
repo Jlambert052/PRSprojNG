@@ -24,7 +24,8 @@ export class ProductCreateComponent implements OnInit {
   ) { }
 
   save(): void {
-    //let vend = this.vendsvc.get(this.product.vendorId);
+    //html saves it as a string you must convert to number
+    this.product.vendorId = +this.product.vendorId;
     console.log(this.product);
     this.prodsvc.create(this.product).subscribe({
       next: (res) => {

@@ -19,7 +19,7 @@
             <td>{{r.description}}</td>
             <td>{{r.justification}}</td>
             <td>{{r.status}}</td>
-            <td>{{r.total}}</td>
+            <td>{{r.total | currency}}</td>
             <td>{{r.user.username}}</td>
             <td>
                 <a routerLink="/requests/reviews/{{r.id}}">Review</a>
