@@ -21,12 +21,12 @@
             </tr>
             <tr>
                 <th>Unit Count</th>
-                <td><input [(ngModel)]="product.unit" type="text"></td>
+                <td><input [(ngModel)]="product.unit" type="number"></td>
             </tr>
             <tr>
                 <th>Vendor</th>
                 <td><select [(ngModel)]="product.vendorId">
-                    <option *ngFor="let v of vendors" value="{{v.id}}">{{v.name}}</option>
+                    <option *ngFor="let v of vendors" value={{v.id}}>{{v.name}}</option>
                 </select></td>
             </tr>
         </tbody>

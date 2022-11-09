@@ -1,1 +1,29 @@
-<p>requestline-change works!</p>
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <table class="table table-sm">
+        <tbody *ngIf="requestline">
+            <tr>
+                <th>ID</th>
+                <td><input [(ngModel)]="requestline.id" type="number" disabled [defaultValue]="0"></td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td><input [(ngModel)]="requestline.quantity" type="number"></td>
+            </tr>
+            <tr>
+                <th>Request</th>
+                <td><input [ngModel]="requestline.requestId" type="number" disabled></td>
+            </tr>
+            <tr>
+                <th>Product</th>
+                <td><select [(ngModel)]="requestline.productId" >
+                    <option *ngFor="let p of products" value="{{p.id}}">{{p.name}}</option>
+                </select></td>
+            </tr>
+        </tbody>
+    </table>
+    <span>
+        <button (click)="save()" class="btn btn-success">Save Request Line</button>
+    </span>
+</div>

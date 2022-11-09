@@ -15,7 +15,6 @@ export class RequestlineListComponent implements OnInit {
 
   pageTitle: string = "Request Lines";
   request!: Request;
-  requestlines: Requestline[] = [];
 
   constructor(
     private reqsvc: RequestService,
@@ -25,7 +24,26 @@ export class RequestlineListComponent implements OnInit {
   ) { }
 
   reviewCheck(): void {
+    console.log(this.request);  
+    this.reqsvc.review(this.request).subscribe({
+      next: (res) => {
+        console.debug("Status Reviewed");
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
+  }
 
+  verifyDelete(id: number): void {
+    this.reqlinesvc.remove(id).subscribe({
+      next: (res) => {
+        console.debug("Line deleted.");
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    })
   }
 
   ngOnInit(): void {

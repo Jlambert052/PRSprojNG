@@ -19,7 +19,7 @@
                 <td>{{request.description}}</td>
                 <td>{{request.rejectionReason}}</td>
                 <td>{{request.status}}</td>
-                <td>{{request.total}}</td>
+                <td>{{request.total | currency}}</td>
                 <td>{{request.user.username}}</td>
                 <td><button (click)="reviewCheck()">Submit for Review</button></td>
             </tr>
@@ -29,9 +29,9 @@
 
 <div>
     <span>
-        <a routerLink="/requestlines/create">Create New Request Line</a>
+        <a routerLink="/requestlines/create/{{request.id}}" *ngIf="request">Create New Request Line</a>
     </span>
-    <table class="table table-sm table-striped">
+    <table class="table table-sm table-striped" *ngIf="request">
         <thead>
             <tr>
                 <th>ID</th>
@@ -50,8 +50,8 @@
                 <td>{{r.quantity}}</td>
                 <td>{{r.quantity * r.product.price | currency}}</td>
                 <td>
-                    <a routerLink="/requestlines/change">Edit</a> |
-                    <a routerLink="/requestlines/remove">Delete</a>
+                    <a routerLink="/requestlines/change/{{r.id}}">Edit</a> |
+                    <a (click)="verifyDelete(r.id)" routerLink="/requests/lines/{{request.id}}">Delete</a>
                 </td>
             </tr>
         </tbody>

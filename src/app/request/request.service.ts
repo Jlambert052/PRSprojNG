@@ -32,7 +32,12 @@ export class RequestService {
     return this.http.put(`${this.baseurl}/${request.id}`, request) as Observable<any>;
   }
 
+  review(request: Request): Observable<Request> {
+    return this.http.put(`${this.baseurl}/review/${request.id}`, request) as Observable<Request>;
+  }
+
   remove(id: number): Observable<any> {
     return this.http.delete(`${this.baseurl}/${id}`) as Observable<any>;
   }
+
 }

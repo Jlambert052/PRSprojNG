@@ -13,7 +13,7 @@ import { ProductService } from '../product.service';
 export class ProductCreateComponent implements OnInit {
 
   pageTitle: string = "Create Product";
-  product: Product = new Product();
+  product: Product = new Product;
   vendors: Vendor[] = [];
   
 
@@ -25,6 +25,7 @@ export class ProductCreateComponent implements OnInit {
 
   save(): void {
     //let vend = this.vendsvc.get(this.product.vendorId);
+    console.log(this.product);
     this.prodsvc.create(this.product).subscribe({
       next: (res) => {
         console.debug("Created.", res);
@@ -45,7 +46,7 @@ export class ProductCreateComponent implements OnInit {
       error: (err) => {
         console.error(err);
       }
-    })
+    });
   }
 
 }

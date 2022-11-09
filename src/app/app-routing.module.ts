@@ -31,6 +31,7 @@ import { RequestReviewsComponent } from './request/request-reviews/request-revie
 import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
 import { RequestlineChangeComponent } from './requestline/requestline-change/requestline-change.component';
 import { RequestlineListComponent } from './requestline/requestline-list/requestline-list.component';
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
 
 
 
@@ -58,10 +59,11 @@ const routes: Routes = [
   {path: "requests/change/:id", component: RequestChangeComponent},
   {path: "requests/create", component: RequestCreateComponent},
   {path: "requests/reviews", component: RequestReviewsComponent},
+  {path: "requests/reviews/:id", component: RequestReviewItemComponent},
 
   {path: "requests/lines/:id", component: RequestlineListComponent},
-  {path: "requestline/create/:id", component: RequestlineCreateComponent},
-  {path: "requestline/change/:id", component: RequestlineChangeComponent},
+  {path: "requestlines/create/:id", component: RequestlineCreateComponent},
+  {path: "requestlines/change/:id", component: RequestlineChangeComponent},
 
   {path: "home", component: HomeComponent},
   {path: "about", component: AboutComponent},
