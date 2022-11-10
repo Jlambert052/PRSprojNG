@@ -1,0 +1,40 @@
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <table class="table table-sm" *ngIf="request.userId">
+        <tbody>
+            <tr>
+                <th>ID</th>
+                <td><input [(ngModel)]="request.id" type="number" disabled></td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td><input [(ngModel)]="request.description" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Justification</th>
+                <td><input [(ngModel)]="request.justification" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Rejection Reason</th>
+                <td><input [(ngModel)]="request.rejectionReason" type="text" disabled></td>
+            </tr>
+            <tr>
+                <th>Delivery Mode</th>
+                <td><input [(ngModel)]="request.deliveryMode" type="text" [disabled]="isDetail"></td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td><input [(ngModel)]="request.status" type="text" disabled></td>
+            </tr>
+            <tr>
+                <th>Total</th>
+                <td><input [(ngModel)]="request.total" type="number" disabled></td>
+            </tr>
+            <tr>
+                <th>User</th>
+                <td><input [(ngModel)]="user.username" value="{{request.userId}}" type="text" disabled></td>
+            </tr>
+        </tbody>
+        <button (click)="save()" class="btn btn-success">Save Changes</button>
+    </table>

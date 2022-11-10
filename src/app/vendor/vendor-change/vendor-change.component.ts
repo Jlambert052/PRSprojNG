@@ -32,7 +32,7 @@ export class VendorChangeComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.params["id"];
+    let id = +this.route.snapshot.params["id"];
     this.vensvc.get(id).subscribe({
       next: (res) => {
         console.debug("Vendor:", res);

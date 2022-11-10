@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<h5>{{pageTitle}}</h5>
+<div>
+    <table class="table table-sm table-striped" *ngIf="requests">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Description</th>
+                <th>Justification</th>
+                <th>Status</th>
+                <th>Total</th>
+                <th>user</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let r of reviews">
+            <td>{{r.id}}</td>
+            <td>{{r.description}}</td>
+            <td>{{r.justification}}</td>
+            <td>{{r.status}}</td>
+            <td>{{r.total | currency}}</td>
+            <td>{{r.user.username}}</td>
+            <td>
+                <a routerLink="/requests/reviews/{{r.id}}">Review</a>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

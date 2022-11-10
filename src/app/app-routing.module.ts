@@ -22,6 +22,17 @@ import { ProductDetailComponent } from './product/product-detail/product-detail.
 import { ProductChangeComponent } from './product/product-change/product-change.component';
 import { ProductCreateComponent } from './product/product-create/product-create.component';
 
+import { RequestListComponent } from './request/request-list/request-list.component';
+import { RequestDetailComponent } from './request/request-detail/request-detail.component';
+import { RequestChangeComponent } from './request/request-change/request-change.component';
+import { RequestCreateComponent } from './request/request-create/request-create.component';
+import { RequestReviewsComponent } from './request/request-reviews/request-reviews.component';
+
+import { RequestlineCreateComponent } from './requestline/requestline-create/requestline-create.component';
+import { RequestlineChangeComponent } from './requestline/requestline-change/requestline-change.component';
+import { RequestlineListComponent } from './requestline/requestline-list/requestline-list.component';
+import { RequestReviewItemComponent } from './request/request-review-item/request-review-item.component';
+
 
 
 const routes: Routes = [
@@ -42,6 +53,17 @@ const routes: Routes = [
   {path: "products/detail/:id", component: ProductDetailComponent},
   {path: "products/change/:id", component:ProductChangeComponent},
   {path: "products/create", component: ProductCreateComponent},
+
+  {path: "requests/list", component: RequestListComponent},
+  {path: "requests/detail/:id", component: RequestDetailComponent},
+  {path: "requests/change/:id", component: RequestChangeComponent},
+  {path: "requests/create", component: RequestCreateComponent},
+  {path: "requests/reviews", component: RequestReviewsComponent},
+  {path: "requests/reviews/:id", component: RequestReviewItemComponent},
+
+  {path: "requests/lines/:id", component: RequestlineListComponent},
+  {path: "requestlines/create/:id", component: RequestlineCreateComponent},
+  {path: "requestlines/change/:id", component: RequestlineChangeComponent},
 
   {path: "home", component: HomeComponent},
   {path: "about", component: AboutComponent},
